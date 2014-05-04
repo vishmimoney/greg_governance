@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<module version="4" relativePaths="false" type="JAVA_MODULE"> 
+  <component name="NewModuleRootManager"> 
+    <exclude-output/>  
+    <orderEntry type="inheritedJdk"/>  
+    <!-- output url="file://$$MODULE_DIR$$/${maven.build.dest}"/ -->  
+    <!-- output-test url="file://$$MODULE_DIR$$/${maven.test.dest}"/ -->  
+    <content url="file://$MODULE_DIR$"> 
+      <!-- sourceFolder url="file://$$MODULE_DIR$$/${pom.build.sourceDirectory}" isTestSource="false"/ -->  
+      <!-- sourceFolder url="file://$$MODULE_DIR$$/${pom.build.testSourceDirectory}" isTestSource="true"/ -->  
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true"/>
+      <excludeFolder url="file://$MODULE_DIR$/target/classes"/>
+      <excludeFolder url="file://$MODULE_DIR$/target/test-classes"/>
+    </content>  
+    <orderEntry type="sourceFolder" forTests="false"/>  
+    <!-- Next include each dependency:
+      <orderEntry type="module" module-name="${dep.artifactId}"/>
+      <orderEntry type="module-library">
+        <library name="${dep.artifactId}">
+          <CLASSES>
+            <root url="jar://${lib.path}!/"/>
+          </CLASSES>
+          <JAVADOC/>
+          <SOURCES/>
+        </library>
+      </orderEntry>
+     -->  
+    <output url="file://$MODULE_DIR$/target/classes"/>
+    <output-test url="file://$MODULE_DIR$/target/test-classes"/>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.registry/3.5.100.v20110502/org.eclipse.equinox.registry-3.5.100.v20110502.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.core/4.2.0/org.wso2.carbon.core-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/hazelcast/wso2/hazelcast/3.0.1.wso2v1/hazelcast-3.0.1.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/hazelcast/hazelcast/3.0.1/hazelcast-3.0.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/osgi/org.eclipse.osgi/3.8.1.v20120830-144521/org.eclipse.osgi-3.8.1.v20120830-144521.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/osgi/org.eclipse.osgi.services/3.3.100.v20120522-1822/org.eclipse.osgi.services-3.3.100.v20120522-1822.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.http.helper/1.1.0.wso2v1/org.eclipse.equinox.http.helper-1.1.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/bouncycastle/bcprov-jdk15/132/bcprov-jdk15-132.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/javax.cache.wso2/4.2.0/javax.cache.wso2-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.utils/4.2.0/org.wso2.carbon.utils-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.user.api/4.2.0/org.wso2.carbon.user.api-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.base/4.2.0/org.wso2.carbon.base-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/ws/commons/axiom/wso2/axiom/1.2.11.wso2v4/axiom-1.2.11.wso2v4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.logging/4.2.0/org.wso2.carbon.logging-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.apache.log4j/1.2.13.v200706111418/org.apache.log4j-1.2.13.v200706111418.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.bootstrap/4.2.0/org.wso2.carbon.bootstrap-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/wrapper/wrapper/3.2.3/wrapper-3.2.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.queuing/4.2.0/org.wso2.carbon.queuing-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/securevault/org.wso2.securevault/1.0.0-wso2v2/org.wso2.securevault-1.0.0-wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/ws/commons/axiom/axiom-api/1.2.11-wso2v4/axiom-api-1.2.11-wso2v4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/geronimo/specs/geronimo-activation_1.1_spec/1.0.2/geronimo-activation_1.1_spec-1.0.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.6/geronimo-javamail_1.4_spec-1.6.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/jaxen/jaxen/1.1.1/jaxen-1.1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/ws/commons/axiom/axiom-impl/1.2.11-wso2v4/axiom-impl-1.2.11-wso2v4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.9/wstx-asl-3.2.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/junit/junit/3.8.2/junit-3.8.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-cli/commons-cli/1.0/commons-cli-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-io/commons-io/1.1/commons-io-1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.securevault/4.2.0/org.wso2.carbon.securevault-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/axis2/wso2/axis2/1.6.1.wso2v10/axis2-1.6.1.wso2v10.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/igniterealtime/smack/wso2/smack/3.0.4.wso2v1/smack-3.0.4.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/igniterealtime/smack/wso2/smackx/3.0.4.wso2v1/smackx-3.0.4.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/jdom/jdom/1.0/jdom-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/xom/xom/1.0/xom-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/xalan/xalan/2.6.0/xalan-2.6.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/ibm/icu/icu4j/3.8/icu4j-3.8.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-fileupload/wso2/commons-fileupload/1.2.0.wso2v1/commons-fileupload-1.2.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-fileupload/commons-fileupload/1.1.1/commons-fileupload-1.1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/ant/wso2/ant/1.7.0.wso2v1/ant-1.7.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-httpclient/wso2/commons-httpclient/3.1.0.wso2v2/commons-httpclient-3.1.0.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/commons/ssl/not-yet-commons-ssl/0.3.9/not-yet-commons-ssl-0.3.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.api/4.2.0/org.wso2.carbon.registry.api-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.core/4.2.0/org.wso2.carbon.registry.core-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-io/wso2/commons-io/2.0.0.wso2v1/commons-io-2.0.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/net/sourceforge/findbugs/annotations/1.3.2/annotations-1.3.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/ws/commons/schema/wso2/XmlSchema/1.4.7.wso2v2/XmlSchema-1.4.7.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/ws/commons/schema/XmlSchema/1.4.3/XmlSchema-1.4.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.xboot/4.2.0/org.wso2.carbon.registry.xboot-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.user.core/4.2.0/org.wso2.carbon.user.core-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-dbcp/wso2/commons-dbcp/1.4.0.wso2v1/commons-dbcp-1.4.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.ndatasource.rdbms/4.2.0/org.wso2.carbon.ndatasource.rdbms-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.ndatasource.common/4.2.0/org.wso2.carbon.ndatasource.common-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/wso2/jdbc-pool/7.0.34.wso2v1/jdbc-pool-7.0.34.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/tomcat-jdbc/7.0.34/tomcat-jdbc-7.0.34.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/tomcat-juli/7.0.34/tomcat-juli-7.0.34.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-collections/wso2/commons-collections/3.2.0.wso2v1/commons-collections-3.2.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/compass-project/wso2/compass/2.0.1.wso2v2/compass-2.0.1.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/abdera/wso2/abdera/1.0.0.wso2v2/abdera-1.0.0.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/poi/wso2/poi-scratchpad/3.9.0.wso2v1/poi-scratchpad-3.9.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/poi/poi-scratchpad/3.9/poi-scratchpad-3.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-pool/wso2/commons-pool/1.5.6.wso2v1/commons-pool-1.5.6.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-pool/commons-pool/1.3/commons-pool-1.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/neethi/wso2/neethi/2.0.4.wso2v4/neethi-2.0.4.wso2v4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/httpcomponents/wso2/httpcore/4.1.0-wso2v1/httpcore-4.1.0-wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/ha/wso2/tomcat-ha/7.0.34.wso2v1/tomcat-ha-7.0.34.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/tomcat-catalina-ha/7.0.34/tomcat-catalina-ha-7.0.34.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/tomcat-tribes/7.0.34/tomcat-tribes-7.0.34.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/tomcat-catalina/7.0.34/tomcat-catalina-7.0.34.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/tomcat-annotations-api/7.0.34/tomcat-annotations-api-7.0.34.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/tomcat-api/7.0.34/tomcat-api-7.0.34.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tomcat/tomcat-util/7.0.34/tomcat-util-7.0.34.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/wsdl4j/wso2/wsdl4j/1.6.2.wso2v2/wsdl4j-1.6.2.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/wsdl4j/wsdl4j/1.6.2/wsdl4j-1.6.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.extensions/4.2.0/org.wso2.carbon.registry.extensions-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.user.mgt/4.2.0/org.wso2.carbon.user.mgt-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.user.mgt.common/4.2.0/org.wso2.carbon.user.mgt.common-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/au/com/bytecode/opencsv/wso2/opencsv/1.8.wso2v1/opencsv-1.8.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/poi/wso2/poi-ooxml/3.9.0.wso2v1/poi-ooxml-3.9.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.common/4.2.0/org.wso2.carbon.registry.common-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.admin.api/4.2.0/org.wso2.carbon.registry.admin.api-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.ntask.core/4.2.0/org.wso2.carbon.ntask.core-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.ntask.common/4.2.0/org.wso2.carbon.ntask.common-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.remote-tasks.stub/4.2.0/org.wso2.carbon.remote-tasks.stub-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/axis2/wso2/axis2-client/1.6.1.wso2v10/axis2-client-1.6.1.wso2v10.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/geronimo/specs/wso2/geronimo-stax-api_1.0_spec/1.0.1.wso2v1/geronimo-stax-api_1.0_spec-1.0.1.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/axis2/wso2/axis2-json/1.6.1.wso2v10/axis2-json-1.6.1.wso2v10.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/woden/wso2/woden/1.0.0.M8-wso2v1/woden-1.0.0.M8-wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-codec/wso2/commons-codec/1.3.0.wso2v1/commons-codec-1.3.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/quartz-scheduler/wso2/quartz/2.1.1.wso2v1/quartz-2.1.1.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/quartz-scheduler/quartz/2.1.1/quartz-2.1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-beanutils/wso2/commons-beanutils/1.8.0.wso2v1/commons-beanutils-1.8.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.core/4.2.0/org.wso2.carbon.feature.mgt.core-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.artifact.repository/1.1.100.v20110519/org.eclipse.equinox.p2.artifact.repository-1.1.100.v20110519.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.common/3.6.100.v20120522-1841/org.eclipse.equinox.common-3.6.100.v20120522-1841.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.core/2.1.0.v20110502-1955/org.eclipse.equinox.p2.core-2.1.0.v20110502-1955.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.director/2.1.0.v20110504-1715/org.eclipse.equinox.p2.director-2.1.0.v20110504-1715.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.engine/2.1.0.v20110511/org.eclipse.equinox.p2.engine-2.1.0.v20110511.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.metadata/2.1.0.v20110510/org.eclipse.equinox.p2.metadata-2.1.0.v20110510.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.metadata.repository/1.2.0.v20110511-1359/org.eclipse.equinox.p2.metadata.repository-1.2.0.v20110511-1359.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.repository/2.1.0.v20110601/org.eclipse.equinox.p2.repository-2.1.0.v20110601.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.simpleconfigurator/1.0.301.v20120828-033635/org.eclipse.equinox.simpleconfigurator-1.0.301.v20120828-033635.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.servlet/4.2.0/org.wso2.carbon.registry.servlet-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/juddi/juddi-core/3.1.5.wso2v1/juddi-core-3.1.5.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/juddi/uddi-ws/3.1.5.wso2v1/uddi-ws-3.1.5.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/juddi/uddi-tck-base/3.1.5.wso2v1/uddi-tck-base-3.1.5.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/xmlunit/xmlunit/1.3/xmlunit-1.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/juddi/juddi-client/3.1.5.wso2v1/juddi-client-3.1.5.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/hibernate/hibernate/3.2.5.ga/hibernate-3.2.5.ga.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/net/sf/ehcache/ehcache/1.2.3/ehcache-1.2.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/javax/transaction/jta/1.0.1B/jta-1.0.1B.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/asm/asm-attrs/1.5.3/asm-attrs-1.5.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/asm/asm/3.2/asm-3.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/hibernate/hibernate-entitymanager/3.3.1.ga/hibernate-entitymanager-3.3.1.ga.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/hibernate/hibernate-annotations/3.3.0.ga/hibernate-annotations-3.3.0.ga.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/hibernate/hibernate-commons-annotations/3.0.0.ga/hibernate-commons-annotations-3.0.0.ga.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/hibernate/hibernate-validator/3.0.0.ga/hibernate-validator-3.0.0.ga.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/jboss/javassist/3.3.ga/javassist-3.3.ga.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/jboss/jboss-common-core/2.0.4.GA/jboss-common-core-2.0.4.GA.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-lang/wso2/commons-lang/2.6.0.wso2v1/commons-lang-2.6.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/geronimo-jpa_2.0_spec-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/openjpa/openjpa/2.2.0-wso2v1/openjpa-2.2.0-wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/net/sourceforge/serp/serp/1.13.1/serp-1.13.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.ui/4.2.0/org.wso2.carbon.ui-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/tiles/wso2/tiles-jsp/2.0.5.wso2v2/tiles-jsp-2.0.5.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.authenticator.proxy/4.2.0/org.wso2.carbon.authenticator.proxy-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.core.common/4.2.0/org.wso2.carbon.core.common-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.authenticator.stub/4.2.0/org.wso2.carbon.authenticator.stub-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.http.servlet/1.1.300.v20120522-1841/org.eclipse.equinox.http.servlet-1.1.300.v20120522-1841.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/org.apache.jasper.glassfish/2.2.2.v201205150955/org.apache.jasper.glassfish-2.2.2.v201205150955.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/equinox/javax.servlet.jsp/2.2.0.v201112011158/javax.servlet.jsp-2.2.0.v201112011158.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.core.commons.stub/4.2.0/org.wso2.carbon.core.commons.stub-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/javax/servlet/jsp/jstl/wso2/jstl/1.2.1.wso2v2/jstl-1.2.1.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/derby/derby/10.4.2.0/derby-10.4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/eclipse/validateutility/0.95/validateutility-0.95.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/wsdl/validator/wso2/wsdl-validator/1.2.0.wso2v1/wsdl-validator-1.2.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/wadl/core/wso2/wadl-core/1.1.3.wso2v2/wadl-core-1.1.3.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/jvnet/ws/wadl/wadl-core/1.1.3/wadl-core-1.1.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/sun/localizer/localizer/1.0/localizer-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/sun/localizer/comresrcgen/1.0/comresrcgen-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/sun/xml/bind/jaxb-xjc/2.2/jaxb-xjc-2.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.6/jaxb-impl-2.2.6.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/javax/xml/bind/jaxb-api/2.2.6/jaxb-api-2.2.6.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/googlecode/jsonschema2pojo/jsonschema2pojo-core/0.3.4/jsonschema2pojo-core-0.3.4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.0.0/jackson-databind-2.0.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.0.0/jackson-annotations-2.0.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.0.0/jackson-core-2.0.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.9/jackson-mapper-asl-1.9.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.9/jackson-core-asl-1.9.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/sun/codemodel/codemodel/2.4.1/codemodel-2.4.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/google/code/findbugs/annotations/1.3.9/annotations-1.3.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/uddi/uddi4j/1.0.1/uddi4j-1.0.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/eclipse/core/org.eclipse.core.runtime/3.5.0.v20090429-1800/org.eclipse.core.runtime-3.5.0.v20090429-1800.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/juddi/wso2/juddi/3.0.3.wso2v2/juddi-3.0.3.wso2v2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/wso2/maven-scm/1.7.0.wso2v1/maven-scm-1.7.0.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-svnexe/1.7.0-wso2v1/maven-scm-provider-svnexe-1.7.0-wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-api/1.7/maven-scm-api-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-manager-plexus/1.7/maven-scm-manager-plexus-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-svn-commons/1.7/maven-scm-provider-svn-commons-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/regexp/regexp/1.3/regexp-1.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-client/1.7/maven-scm-client-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-accurev/1.7/maven-scm-provider-accurev-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-bazaar/1.7/maven-scm-provider-bazaar-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-clearcase/1.7/maven-scm-provider-clearcase-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvsexe/1.7/maven-scm-provider-cvsexe-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.7/maven-scm-provider-cvs-commons-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvsjava/1.7/maven-scm-provider-cvsjava-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/netbeans/lib/cvsclient/20060125/cvsclient-20060125.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/ch/ethz/ganymed/ganymed-ssh2/build210/ganymed-ssh2-build210.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-gitexe/1.7/maven-scm-provider-gitexe-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-git-commons/1.7/maven-scm-provider-git-commons-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-hg/1.7/maven-scm-provider-hg-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-jazz/1.7/maven-scm-provider-jazz-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-local/1.7/maven-scm-provider-local-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-perforce/1.7/maven-scm-provider-perforce-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-starteam/1.7/maven-scm-provider-starteam-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-synergy/1.7/maven-scm-provider-synergy-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-vss/1.7/maven-scm-provider-vss-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/apache/maven/scm/maven-scm-provider-tfs/1.7/maven-scm-provider-tfs-1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.indexing/4.2.0/org.wso2.carbon.registry.indexing-4.2.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/solr/wso2/solr/1.4.1.wso2v1/solr-1.4.1.wso2v1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/vishmi/.m2/repository/com/h2database/wso2/h2-database-engine/1.2.140.wso2v3/h2-database-engine-1.2.140.wso2v3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+  </component>  
+  <component name="ModuleRootManager"/>  
+  <!-- If it's a war project:
+  <component name="WebModuleProperties">
+    <containerElement type="module" name="${dep.artifactId}">
+      <attribute name="method" value="1" />
+      <attribute name="URI" value="/WEB-INF/classes" />
+    </containerElement>
+    <containerElement type="library" level="module" name="${dep.artifactId}">
+      <attribute name="method" value="1" />
+      <attribute name="URI" value="/WEB-INF/lib/${dep.systemPath.name}" />
+    </containerElement>
+    <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/${pom.build.warSourceDirectory}/WEB-INF/web.xml" version="" />
+    <webroots>
+      <root url="file://$MODULE_DIR$/${pom.build.warSourceDirectory}" relative="/" />
+    </webroots>
+  </component>
+  --> 
+</module>
