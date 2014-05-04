@@ -75,6 +75,8 @@ public class DefaultLifeCycle extends Aspect {
     private String stateProperty = "registry.lifecycle.SoftwareProjectLifecycle.state";
     private String stateVoteProperty = "registry.LC.currentVotes";
     private String ASSOCIATION = "association";
+    private String stateStartTimeProperty = "registry.LC.Time.State.startTime";
+
 
 //    Variables to keep track of lifecycle information
     private List<String> states;
@@ -127,7 +129,10 @@ public class DefaultLifeCycle extends Aspect {
                     break;
                 }
             }
+
         }
+        //new code
+        getLifecycleTimeData(config ,aspectName);
     }
 
     private void clearAll() {
@@ -230,8 +235,16 @@ public class DefaultLifeCycle extends Aspect {
             return;
         }
 
+
+
         resource.setProperty(stateProperty, scxml.getInitial().replace(".", " "));
         resource.setProperty(lifecycleProperty, aspectName);
+
+        //this is test code to check whether adding resorce is succssessfull.
+
+        resource.setProperty(stateStartTimeProperty, "test");
+        System.out.println(stateStartTimeProperty+":"+ resource.getProperty(stateStartTimeProperty));
+
 
 //      Initializing statCollection object
         StatCollection statCollection = new StatCollection();
@@ -843,6 +856,88 @@ public class DefaultLifeCycle extends Aspect {
             log.error(message);
             throw new RegistryException(message);
         }
+    }
+
+    public static void getLifecycleTimeData(OMElement elem,String name){
+
+
+        System.out.println("\n-------------------------------------------------------------------------------");
+
+        System.out.println("\naspect name: "+ name);
+
+        Iterator<OMElement> confit = elem.getChildrenWithLocalName("configuration");
+        OMElement confchild= confit.next();
+        String type= confchild.getAttributeValue(new QName("type"));
+        System.out.println("configuration type: "+ type);
+
+        Iterator<OMElement> lfit = confchild.getChildrenWithLocalName("lifecycle");
+        OMElement lfchild = lfit.next();
+
+        Iterator<OMElement> scxmlit = lfchild.getChildrenWithLocalName("scxml");
+        OMElement scxmlchild = scxmlit.next();
+        String init= scxmlchild.getAttributeValue(new QName("initialstate"));
+        System.out.println("initial state: "+ init);
+
+        Iterator<OMElement> stateit = scxmlchild.getChildrenWithLocalName("state");
+
+        int i = 1;
+        System.out.println("\nStates: ");
+        while(stateit.hasNext()){
+            OMElement statechild = stateit.next();
+            String stateid = statechild.getAttributeValue(new QName("id"));
+            System.out.println("\nState "+ i);
+            System.out.println("\t"+"name: "+ stateid);
+
+
+            Iterator<OMElement> dmodelit = statechild.getChildrenWithLocalName("datamodel");
+
+            while(dmodelit.hasNext()){
+                OMElement dmodelchild = dmodelit.next();
+
+
+                Iterator<OMElement> datait = dmodelchild.getChildrenWithLocalName("data");
+
+                while(datait.hasNext()){
+                    OMElement datachild = datait.next();
+                    if(datachild.getAttributeValue(new QName("name")).equals("timeValidation")){
+                        String dataname = datachild.getAttributeValue(new QName("name"));
+
+                        Iterator<OMElement> timeit = datachild.getChildrenWithLocalName("timeValidity");
+                        while(timeit.hasNext()){
+                            OMElement timechild = timeit.next();
+
+
+
+                    String startDate = timechild.getAttributeValue(new QName("startDate"));
+                            if(startDate!=null){
+                               // stateTimeWindowBean.setStartDate(startdate);
+                                System.out.println("\t"+ "start date: "+ startDate);
+                            }
+
+                            String endDate = timechild.getAttributeValue(new QName("endDate"));
+                            if(endDate!=null){
+                                System.out.println("\t"+ "end date: "+ endDate);
+                            }
+
+                            String minDayCount = timechild.getAttributeValue(new QName("minDayCount"));
+                            if(startDate!=null){
+                                System.out.println("\t"+ "minDayCount: "+ minDayCount);
+                            }
+
+                            String maxDayCount = timechild.getAttributeValue(new QName("maxDayCount"));
+                            if(startDate!=null){
+                                System.out.println("\t"+ "maxDayCount: "+ maxDayCount);
+                            }
+                        }
+                    }
+                }
+            }
+
+            i++;
+
+        }
+        System.out.println("------------------------------------------------------------------------------");
+
     }
 
 }
