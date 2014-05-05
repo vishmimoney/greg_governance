@@ -62,8 +62,12 @@ import javax.xml.namespace.QName;
 import javax.xml.stream.XMLStreamException;
 import java.io.CharArrayReader;
 import java.io.IOException;
+import java.lang.String;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 import static org.wso2.carbon.governance.registry.extensions.aspects.utils.Utils.*;
 
@@ -88,6 +92,8 @@ public class DefaultLifeCycle extends Aspect {
     private Map<String, List<ScriptBean>> scriptElements;
     private Map<String, Map<String,String>> transitionUIs;
     private Map<String, List<ApprovalBean>> transitionApproval;
+    //new code
+    private HashMap<String, List<String>> timeValidation= new HashMap<String, List<String>>();
 
 
     private boolean isConfigurationFromResource;
@@ -132,7 +138,9 @@ public class DefaultLifeCycle extends Aspect {
 
         }
         //new code
-        getLifecycleTimeData(config ,aspectName);
+        getLifecycleTimeData(config, aspectName, timeValidation);
+
+
     }
 
     private void clearAll() {
@@ -143,6 +151,7 @@ public class DefaultLifeCycle extends Aspect {
         transitionExecution.clear();
         transitionUIs.clear();
         transitionApproval.clear();
+
     }
 
     private void initialize() {
@@ -157,6 +166,7 @@ public class DefaultLifeCycle extends Aspect {
         transitionApproval = new HashMap<String, List<ApprovalBean>>();
 //        By default we enable auditing
         isAuditEnabled = true;
+
     }
 
     private void setSCXMLConfiguration(Registry registry) throws RegistryException, XMLStreamException, IOException,
@@ -858,9 +868,9 @@ public class DefaultLifeCycle extends Aspect {
         }
     }
 
-    public static void getLifecycleTimeData(OMElement elem,String name){
+    private void getLifecycleTimeData(OMElement elem,String name,HashMap<String,List<String>> timeValidation){
 
-
+        List<String> timeConstraints = new ArrayList<String>();
         System.out.println("\n-------------------------------------------------------------------------------");
 
         System.out.println("\naspect name: "+ name);
@@ -928,16 +938,40 @@ public class DefaultLifeCycle extends Aspect {
                             if(startDate!=null){
                                 System.out.println("\t"+ "maxDayCount: "+ maxDayCount);
                             }
+
+
+                                timeConstraints.add(startDate);
+                                timeConstraints.add(endDate);
+                                timeConstraints.add(minDayCount);
+                                timeConstraints.add(maxDayCount);
+
+
+                            timeValidation.put(stateid , timeConstraints);
+                           // test(timeValidation);
+
+
+                            }
+
                         }
                     }
                 }
+
+                i++;
             }
+            System.out.println("------------------------------------------------------------------------------");
 
-            i++;
 
+       }
+
+  /*  public void test(HashMap<String,List<String>> test){
+        List<String> times = test.get("Development");
+
+        Iterator<String> it = times.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
         }
-        System.out.println("------------------------------------------------------------------------------");
+    }*/
+   }
 
-    }
 
-}
+
