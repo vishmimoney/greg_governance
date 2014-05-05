@@ -16,6 +16,7 @@
 
 package org.wso2.carbon.governance.registry.extensions.aspects;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 import org.apache.axis2.AxisFault;
@@ -62,12 +63,19 @@ import javax.xml.namespace.QName;
 import javax.xml.stream.XMLStreamException;
 import java.io.CharArrayReader;
 import java.io.IOException;
+import java.lang.Exception;
 import java.lang.String;
+import java.lang.System;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+//new imports
+import java.text.SimpleDateFormat;
+
 
 import static org.wso2.carbon.governance.registry.extensions.aspects.utils.Utils.*;
 
@@ -79,7 +87,8 @@ public class DefaultLifeCycle extends Aspect {
     private String stateProperty = "registry.lifecycle.SoftwareProjectLifecycle.state";
     private String stateVoteProperty = "registry.LC.currentVotes";
     private String ASSOCIATION = "association";
-    private String stateStartTimeProperty = "registry.LC.Time.State.startTime";
+    //newcode
+   // private boolean timeValidity = true;
 
 
 //    Variables to keep track of lifecycle information
@@ -252,8 +261,8 @@ public class DefaultLifeCycle extends Aspect {
 
         //this is test code to check whether adding resorce is succssessfull.
 
-        resource.setProperty(stateStartTimeProperty, "test");
-        System.out.println(stateStartTimeProperty+":"+ resource.getProperty(stateStartTimeProperty));
+        //resource.setProperty(stateStartTimeProperty, "test");
+       // System.out.println(stateStartTimeProperty+":"+ resource.getProperty(stateStartTimeProperty));
 
 
 //      Initializing statCollection object
@@ -870,7 +879,7 @@ public class DefaultLifeCycle extends Aspect {
 
     private void getLifecycleTimeData(OMElement elem,String name,HashMap<String,List<String>> timeValidation){
 
-        List<String> timeConstraints = new ArrayList<String>();
+
         System.out.println("\n-------------------------------------------------------------------------------");
 
         System.out.println("\naspect name: "+ name);
@@ -930,26 +939,24 @@ public class DefaultLifeCycle extends Aspect {
                             }
 
                             String minDayCount = timechild.getAttributeValue(new QName("minDayCount"));
-                            if(startDate!=null){
+                            if(minDayCount!=null){
                                 System.out.println("\t"+ "minDayCount: "+ minDayCount);
                             }
 
                             String maxDayCount = timechild.getAttributeValue(new QName("maxDayCount"));
-                            if(startDate!=null){
+                            if(maxDayCount!=null){
                                 System.out.println("\t"+ "maxDayCount: "+ maxDayCount);
                             }
 
+                            List<String> timeConstraints = new ArrayList<String>();
 
                                 timeConstraints.add(startDate);
                                 timeConstraints.add(endDate);
                                 timeConstraints.add(minDayCount);
                                 timeConstraints.add(maxDayCount);
 
-
                             timeValidation.put(stateid , timeConstraints);
-                           // test(timeValidation);
-
-
+                            
                             }
 
                         }
@@ -957,20 +964,68 @@ public class DefaultLifeCycle extends Aspect {
                 }
 
                 i++;
+
             }
             System.out.println("------------------------------------------------------------------------------");
-
+            checkTimeValidity(timeValidation);
 
        }
 
-  /*  public void test(HashMap<String,List<String>> test){
-        List<String> times = test.get("Development");
+  private void checkTimeValidity(HashMap<String,List<String>> timeData){
+               long currentTimeMillis = System.currentTimeMillis();
+                System.out.println("Current Time:"+ currentTimeMillis+"\n");
 
-        Iterator<String> it = times.iterator();
-        while(it.hasNext()){
-            System.out.println(it.next());
-        }
-    }*/
+      Iterator<String> it1= timeData.keySet().iterator();
+
+      while(it1.hasNext()){
+          String state = it1.next();
+          System.out.println(state+"\n");
+
+          List<String> times = timeData.get(state);
+
+          Iterator<String> it = times.iterator();
+
+
+        //logic is implemented for startDate,endDate scenario.other two scenarios need more handling and thinking.
+        //can implement for further development
+          long endDateMillis = 0;
+          for(int i=0; i<2; i++){
+              String date = it.next();
+              System.out.println(date);
+
+
+              if(date!=null){
+                 try{
+                     Date formattedDate = new SimpleDateFormat("yyyy-MM-dd,HH:mm").parse(date);
+                        System.out.println(formattedDate);
+                         long dateMillis = formattedDate.getTime();
+                         System.out.println(dateMillis+"\n");
+                //anyway in the second round end date will be recorded
+                            endDateMillis = dateMillis;
+
+                 }
+                 catch (Exception e){
+                   e.printStackTrace();
+                 }
+
+             }
+          }
+          //logic is developed to notify if only time below than 2 days are left.
+          //two days in milliseconds 172800000
+
+          //this notification time can also make dynamic in furthe improvements.
+          if((currentTimeMillis+172800000) > endDateMillis){
+              long difference = (currentTimeMillis+172800000)-endDateMillis;
+              System.out.println(difference);
+              float diffDays = difference/86400000;
+              System.out.println("==============================================================================");
+              System.out.println("ALERT!!!!!");
+              log.info("\"" + state + "\" state will be expired from " + diffDays + " more days.");
+              System.out.println("==============================================================================");
+
+             }
+         }
+     }
    }
 
 
