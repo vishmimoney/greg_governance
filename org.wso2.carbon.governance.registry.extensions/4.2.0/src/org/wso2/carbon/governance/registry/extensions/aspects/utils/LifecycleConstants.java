@@ -117,4 +117,7 @@ public class LifecycleConstants {
     public static final String REGISTRY_CUSTOM_LIFECYCLE_USER_VOTE =
             "registry.custom_lifecycle.user.vote";
 
+    //new code
+    public static final String TIME_VALIDITY = "registry.LC.time";
+
 }
