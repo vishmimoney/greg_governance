@@ -19,11 +19,7 @@ import org.apache.axiom.om.util.AXIOMUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.wso2.carbon.governance.registry.extensions.beans.ApprovalBean;
-import org.wso2.carbon.governance.registry.extensions.beans.CheckItemBean;
-import org.wso2.carbon.governance.registry.extensions.beans.CustomCodeBean;
-import org.wso2.carbon.governance.registry.extensions.beans.PermissionsBean;
-import org.wso2.carbon.governance.registry.extensions.beans.ScriptBean;
+import org.wso2.carbon.governance.registry.extensions.beans.*;
 import org.wso2.carbon.governance.registry.extensions.interfaces.CustomValidations;
 import org.wso2.carbon.governance.registry.extensions.interfaces.Execution;
 import org.wso2.carbon.registry.core.Resource;
@@ -35,6 +31,8 @@ import java.util.*;
 public class Utils {
     private static final Log log = LogFactory.getLog(Utils.class);
 
+    //new code
+    public static boolean isTimeValid = true;
     public static OMElement getHistoryInfoElement(String text){
         try {
             String template = "<info></info>";
@@ -504,5 +502,26 @@ public class Utils {
         }
     }
 
+    public static void getTimeValidity(TimeWindowBean timeWindowBean){
 
-}
+
+       /* String value = resource.getProperty(LifecycleConstants.TIME_VALIDITY);
+        System.out.println("TimeValidity:"+value);
+
+        if(value.equals("false")){
+            isTimeValid = false;
+        }*/
+
+        System.out.println("isTimeValid:"+timeWindowBean.getIsTimeValid());
+        if(timeWindowBean.getIsTimeValid() == false){
+            isTimeValid = false;
+        }
+        else
+            isTimeValid = true;
+
+        }
+
+    }
+
+
+
