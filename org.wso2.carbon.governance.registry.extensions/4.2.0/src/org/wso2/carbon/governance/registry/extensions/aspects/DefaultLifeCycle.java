@@ -36,11 +36,14 @@ import org.wso2.carbon.governance.api.exception.GovernanceException;
 import org.wso2.carbon.governance.registry.extensions.aspects.utils.LifecycleConstants;
 import org.wso2.carbon.governance.registry.extensions.aspects.utils.StatCollection;
 import org.wso2.carbon.governance.registry.extensions.aspects.utils.StatWriter;
+import org.wso2.carbon.governance.registry.extensions.aspects.utils.Utils;
 import org.wso2.carbon.governance.registry.extensions.beans.ApprovalBean;
 import org.wso2.carbon.governance.registry.extensions.beans.CheckItemBean;
 import org.wso2.carbon.governance.registry.extensions.beans.CustomCodeBean;
 import org.wso2.carbon.governance.registry.extensions.beans.PermissionsBean;
 import org.wso2.carbon.governance.registry.extensions.beans.ScriptBean;
+//new import
+import org.wso2.carbon.governance.registry.extensions.beans.TimeWindowBean;
 import org.wso2.carbon.governance.registry.extensions.interfaces.CustomValidations;
 import org.wso2.carbon.governance.registry.extensions.interfaces.Execution;
 import org.wso2.carbon.mashup.javascript.hostobjects.registry.CollectionHostObject;
@@ -58,6 +61,7 @@ import org.wso2.carbon.registry.core.utils.RegistryUtils;
 import org.wso2.carbon.user.core.UserStoreException;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import sun.awt.TimedWindowEvent;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLStreamException;
@@ -83,12 +87,15 @@ import static org.wso2.carbon.governance.registry.extensions.aspects.utils.Utils
 public class DefaultLifeCycle extends Aspect {
     private static final Log log = LogFactory.getLog(DefaultLifeCycle.class);
 
+    TimeWindowBean timeWindowBean = new TimeWindowBean();
+
     private String lifecycleProperty = "registry.LC.name";
     private String stateProperty = "registry.lifecycle.SoftwareProjectLifecycle.state";
     private String stateVoteProperty = "registry.LC.currentVotes";
     private String ASSOCIATION = "association";
     //newcode
-   // private boolean timeValidity = true;
+   private static boolean timeValidity = true;
+    private String lcTimeProperty = "registry.LC.time";
 
 
 //    Variables to keep track of lifecycle information
@@ -120,6 +127,8 @@ public class DefaultLifeCycle extends Aspect {
 
         initialize();
 
+
+
         String currentAspectName = config.getAttributeValue(new QName(LifecycleConstants.NAME));
         aspectName = currentAspectName;
         currentAspectName = currentAspectName.replaceAll("\\s", "");
@@ -148,6 +157,11 @@ public class DefaultLifeCycle extends Aspect {
         }
         //new code
         getLifecycleTimeData(config, aspectName, timeValidation);
+        System.out.println("TimeValidity:"+ timeValidity);
+        timeWindowBean.setIsTimeValid(timeValidity);
+        Utils.getTimeValidity(timeWindowBean);
+
+
 
 
     }
@@ -259,12 +273,19 @@ public class DefaultLifeCycle extends Aspect {
         resource.setProperty(stateProperty, scxml.getInitial().replace(".", " "));
         resource.setProperty(lifecycleProperty, aspectName);
 
-        //this is test code to check whether adding resorce is succssessfull.
+        //String timeValue;
 
-        //resource.setProperty(stateStartTimeProperty, "test");
-       // System.out.println(stateStartTimeProperty+":"+ resource.getProperty(stateStartTimeProperty));
+       // System.out.println("Time Validity:"+timeValidity);
 
 
+        //new code
+
+
+      /*  resource.setProperty(lcTimeProperty, timeValue );
+        System.out.println(lcTimeProperty+":"+ resource.getProperty(lcTimeProperty));
+        Utils.getTimeValidity(resource);
+
+*/
 //      Initializing statCollection object
         StatCollection statCollection = new StatCollection();
 //      set action type="association"
@@ -929,8 +950,7 @@ public class DefaultLifeCycle extends Aspect {
 
                     String startDate = timechild.getAttributeValue(new QName("startDate"));
                             if(startDate!=null){
-                               // stateTimeWindowBean.setStartDate(startdate);
-                                System.out.println("\t"+ "start date: "+ startDate);
+                               System.out.println("\t"+ "start date: "+ startDate);
                             }
 
                             String endDate = timechild.getAttributeValue(new QName("endDate"));
@@ -956,7 +976,7 @@ public class DefaultLifeCycle extends Aspect {
                                 timeConstraints.add(maxDayCount);
 
                             timeValidation.put(stateid , timeConstraints);
-                            
+
                             }
 
                         }
@@ -1013,17 +1033,23 @@ public class DefaultLifeCycle extends Aspect {
           //logic is developed to notify if only time below than 2 days are left.
           //two days in milliseconds 172800000
 
-          //this notification time can also make dynamic in furthe improvements.
+          //this notification time can also make dynamic in further improvements.
           if((currentTimeMillis+172800000) > endDateMillis){
-              long difference = (currentTimeMillis+172800000)-endDateMillis;
-              System.out.println(difference);
+              long difference = endDateMillis - currentTimeMillis;
+              System.out.println("Time Difference:"+difference);
               float diffDays = difference/86400000;
               System.out.println("==============================================================================");
               System.out.println("ALERT!!!!!");
-              log.info("\"" + state + "\" state will be expired from " + diffDays + " more days.");
+              log.info("\"" + state + "\" state - Expiry Days:  " + diffDays);
               System.out.println("==============================================================================");
+          }
 
+
+          if(currentTimeMillis > endDateMillis){
+              timeValidity = false;
              }
+          else
+              timeValidity = true;
          }
      }
    }
