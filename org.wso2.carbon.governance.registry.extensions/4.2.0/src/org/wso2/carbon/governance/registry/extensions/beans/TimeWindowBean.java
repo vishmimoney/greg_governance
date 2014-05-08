@@ -16,14 +16,16 @@
 
 package org.wso2.carbon.governance.registry.extensions.beans;
 
+//holds the boolean attribute isTimeValid which is then used in Utils class
 public class TimeWindowBean{
+
   private boolean isTimeValid;
 
    public void setIsTimeValid(Boolean isTimeValid){
        this.isTimeValid = isTimeValid;
    }
 
-    public boolean getIsTimeValid(){
+   public boolean getIsTimeValid(){
         return isTimeValid;
     }
 }

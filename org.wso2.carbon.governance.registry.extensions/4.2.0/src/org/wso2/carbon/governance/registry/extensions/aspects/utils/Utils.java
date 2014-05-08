@@ -33,7 +33,8 @@ public class Utils {
 
     //new code
     public static boolean isTimeValid = true;
-    public static OMElement getHistoryInfoElement(String text){
+
+    public static OMElement getHistoryInfoElement(String text) {
         try {
             String template = "<info></info>";
 
@@ -56,13 +57,14 @@ public class Utils {
             customValidations = (CustomValidations) customCodeClass.newInstance();
             customValidations.init(parameterMap);
 
-        }  catch (Exception e) {
+        } catch (Exception e) {
             String msg = "Unable to load validations class";
             log.error(msg, e);
-            throw new Exception(msg,e);
+            throw new Exception(msg, e);
         }
         return customValidations;
     }
+
     public static Execution loadCustomExecutors(String className, Map parameterMap) throws Exception {
 
         Execution customExecutors;
@@ -75,7 +77,7 @@ public class Utils {
         } catch (Exception e) {
             String msg = "Unable to load executions class";
             log.error(msg, e);
-            throw new Exception(msg,e);
+            throw new Exception(msg, e);
         }
         return customExecutors;
     }
@@ -88,24 +90,24 @@ public class Utils {
                     .split(",")));
         return permBean;
     }
-    
+
     public static ApprovalBean createApprovalBean(OMElement permChild) {
-    	ApprovalBean approveBean = new ApprovalBean();
-    	approveBean.setForEvent(permChild.getAttributeValue(new QName(LifecycleConstants.FOR_EVENT)));
+        ApprovalBean approveBean = new ApprovalBean();
+        approveBean.setForEvent(permChild.getAttributeValue(new QName(LifecycleConstants.FOR_EVENT)));
         if (permChild.getAttributeValue(new QName("roles")) != null) {
-        	String[] roles = permChild.getAttributeValue(new QName("roles")).split(",");
-        	if (roles.length == 1 && roles[0].equals("")) {
-        		roles = new String[0];
-        	}
-        	approveBean.setRoles(Arrays.asList(roles));
+            String[] roles = permChild.getAttributeValue(new QName("roles")).split(",");
+            if (roles.length == 1 && roles[0].equals("")) {
+                roles = new String[0];
+            }
+            approveBean.setRoles(Arrays.asList(roles));
         }
         if (permChild.getAttributeValue(new QName("votes")) != null) {
-        	approveBean.setVotes(Integer.parseInt(permChild.getAttributeValue(new QName("votes"))));
+            approveBean.setVotes(Integer.parseInt(permChild.getAttributeValue(new QName("votes"))));
         }
         return approveBean;
     }
 
-    public static CustomCodeBean createCustomCodeBean(OMElement customCodeChild,String type) throws Exception {
+    public static CustomCodeBean createCustomCodeBean(OMElement customCodeChild, String type) throws Exception {
         CustomCodeBean customCodeBean = new CustomCodeBean();
         Map<String, String> paramNameValues = new HashMap<String, String>();
 
@@ -113,25 +115,25 @@ public class Utils {
         while (parameters.hasNext()) {
             // this loop is for the parameter name and values
             OMElement paramChild = (OMElement) parameters.next();
-            
-            if ((paramChild.getAttributeValue(new QName("value")))!=null) {
-            	paramNameValues.put(paramChild.getAttributeValue(new QName(LifecycleConstants.NAME)),
+
+            if ((paramChild.getAttributeValue(new QName("value"))) != null) {
+                paramNameValues.put(paramChild.getAttributeValue(new QName(LifecycleConstants.NAME)),
                         paramChild.getAttributeValue(new QName("value")));
-			} else {
-				if (!(paramChild.getText()).equals("")) {
-					paramNameValues.put(paramChild.getAttributeValue(new QName(LifecycleConstants.NAME)),
-	                        paramChild.getText());
-				} else {
-					paramNameValues.put(paramChild.getAttributeValue(new QName(LifecycleConstants.NAME)),
-	                        paramChild.getFirstElement().toString());
-				}
-			}
-            
+            } else {
+                if (!(paramChild.getText()).equals("")) {
+                    paramNameValues.put(paramChild.getAttributeValue(new QName(LifecycleConstants.NAME)),
+                            paramChild.getText());
+                } else {
+                    paramNameValues.put(paramChild.getAttributeValue(new QName(LifecycleConstants.NAME)),
+                            paramChild.getFirstElement().toString());
+                }
+            }
+
         }
         if (type.equals(LifecycleConstants.VALIDATION)) {
             customCodeBean.setClassObeject(loadCustomValidators(
                     customCodeChild.getAttributeValue(new QName("class")), paramNameValues));
-        } else if(type.equals(LifecycleConstants.EXECUTION)) {
+        } else if (type.equals(LifecycleConstants.EXECUTION)) {
             customCodeBean.setClassObeject(loadCustomExecutors(
                     customCodeChild.getAttributeValue(new QName("class")), paramNameValues));
         }
@@ -139,17 +141,17 @@ public class Utils {
         return customCodeBean;
     }
 
-    public static void clearCheckItems(Resource resource){
+    public static void clearCheckItems(Resource resource) {
         Properties properties = (Properties) resource.getProperties().clone();
         for (Object o : properties.keySet()) {
             String key = (String) o;
-            if(key.startsWith(LifecycleConstants.REGISTRY_CUSTOM_LIFECYCLE_CHECKLIST_OPTION)){
+            if (key.startsWith(LifecycleConstants.REGISTRY_CUSTOM_LIFECYCLE_CHECKLIST_OPTION)) {
                 resource.removeProperty(key);
             }
         }
     }
-    
-    public static void addCheckItems(Resource resource, List<CheckItemBean> currentStateCheckItems, String state){
+
+    public static void addCheckItems(Resource resource, List<CheckItemBean> currentStateCheckItems, String state) {
 
         if (currentStateCheckItems != null) {
             int order = 0;
@@ -175,16 +177,16 @@ public class Utils {
                                 + LifecycleConstants.ITEM_PERMISSION;
 
                 resource.setProperty(resourcePropertyNameForItem, items);
-                if(allowedRoles.isEmpty()){
+                if (allowedRoles.isEmpty()) {
                     resource.setProperty(resourcePropertyNameForItemPermission, resourcePropertyNameForItemPermission);
-                }else{
+                } else {
                     resource.setProperty(resourcePropertyNameForItemPermission, allowedRoles);
                 }
 
                 order++;
             }
         }
-    }   
+    }
 
     public static void addScripts(String state, Resource resource, List<ScriptBean> scriptList) {
         if (scriptList != null) {
@@ -203,11 +205,11 @@ public class Utils {
         }
     }
 
-    public static void addTransitionUI(Resource resource,Map<String,String> transitionUI){
+    public static void addTransitionUI(Resource resource, Map<String, String> transitionUI) {
         List<String> tobeRemoved = new ArrayList<String>();
         Properties properties = resource.getProperties();
         for (Object key : properties.keySet()) {
-            if(key.toString().startsWith(LifecycleConstants.REGISTRY_CUSTOM_LIFECYCLE_CHECKLIST_TRANSITION_UI)){
+            if (key.toString().startsWith(LifecycleConstants.REGISTRY_CUSTOM_LIFECYCLE_CHECKLIST_TRANSITION_UI)) {
                 tobeRemoved.add(key.toString());
             }
         }
@@ -218,8 +220,8 @@ public class Utils {
         if (transitionUI != null) {
             for (Map.Entry<String, String> entry : transitionUI.entrySet()) {
                 resource.setProperty(
-                        LifecycleConstants.REGISTRY_CUSTOM_LIFECYCLE_CHECKLIST_TRANSITION_UI +entry.getKey()
-                        ,entry.getValue());
+                        LifecycleConstants.REGISTRY_CUSTOM_LIFECYCLE_CHECKLIST_TRANSITION_UI + entry.getKey()
+                        , entry.getValue());
             }
         }
     }
@@ -236,7 +238,7 @@ public class Utils {
         }
         return !permissionSet.isEmpty();
     }
-    
+
     public static boolean isCheckItemClickAllowed(String[] roles, List<PermissionsBean> permissionsBeans) {
         Set<String> permissionSet = new HashSet<String>(Arrays.asList(roles));
         if (permissionsBeans != null) {
@@ -250,11 +252,11 @@ public class Utils {
         return !permissionSet.isEmpty();
     }
 
-    public static String getCheckItemName(List<String> propValues){
+    public static String getCheckItemName(List<String> propValues) {
         String name = null;
 
         for (String propValue : propValues) {
-            if(propValue.startsWith("name:")){
+            if (propValue.startsWith("name:")) {
                 name = propValue.split("name:")[1];
             }
         }
@@ -262,30 +264,30 @@ public class Utils {
         return name;
     }
 
-    public static Map<String,String> extractCheckItemValues(Map<String,String> parameterMap){
-        Map<String,String> checkItems = new HashMap<String, String>();
+    public static Map<String, String> extractCheckItemValues(Map<String, String> parameterMap) {
+        Map<String, String> checkItems = new HashMap<String, String>();
 
         for (Map.Entry<String, String> entry : parameterMap.entrySet()) {
-            if(entry.getKey().endsWith(LifecycleConstants.ITEM)){
-                checkItems.put(entry.getKey(),entry.getValue());
+            if (entry.getKey().endsWith(LifecycleConstants.ITEM)) {
+                checkItems.put(entry.getKey(), entry.getValue());
             }
         }
         return checkItems;
     }
-    
-    public static Map<String,String> extractVotesValues(Map<String,String> parameterMap){
-        Map<String,String> checkItems = new HashMap<String, String>();
+
+    public static Map<String, String> extractVotesValues(Map<String, String> parameterMap) {
+        Map<String, String> checkItems = new HashMap<String, String>();
 
         for (Map.Entry<String, String> entry : parameterMap.entrySet()) {
-            if(entry.getKey().endsWith(LifecycleConstants.VOTE)){
-                checkItems.put(entry.getKey(),entry.getValue());
+            if (entry.getKey().endsWith(LifecycleConstants.VOTE)) {
+                checkItems.put(entry.getKey(), entry.getValue());
             }
         }
         return checkItems;
     }
 
     public static void populateTransitionExecutors(String currentStateName, OMElement node,
-                                                   Map<String,List<CustomCodeBean>> transitionExecution) throws Exception {
+                                                   Map<String, List<CustomCodeBean>> transitionExecution) throws Exception {
         if (!transitionExecution.containsKey(currentStateName)
                 && (node.getAttributeValue(new QName(LifecycleConstants.NAME)).equals("transitionExecution"))) {
             List<CustomCodeBean> customCodeBeanList = new ArrayList<CustomCodeBean>();
@@ -299,17 +301,17 @@ public class Utils {
     }
 
     public static void populateTransitionUIs(String currentStateName, OMElement node,
-                                             Map<String, Map<String,String>> transitionUIs) {
+                                             Map<String, Map<String, String>> transitionUIs) {
         //                    Adding the transition UIs
         if (!transitionUIs.containsKey(currentStateName)
                 && (node.getAttributeValue(new QName(LifecycleConstants.NAME)).equals("transitionUI"))) {
-            Map<String,String> uiEventMap = new HashMap<String, String>();
+            Map<String, String> uiEventMap = new HashMap<String, String>();
             Iterator uiIterator = node.getChildElements();
 
             while (uiIterator.hasNext()) {
                 OMElement uiElement = (OMElement) uiIterator.next();
                 uiEventMap.put(uiElement.getAttributeValue(new QName(LifecycleConstants.FOR_EVENT))
-                        ,uiElement.getAttributeValue(new QName("href")));
+                        , uiElement.getAttributeValue(new QName("href")));
             }
             transitionUIs.put(currentStateName, uiEventMap);
         }
@@ -429,29 +431,29 @@ public class Utils {
             }
         }
     }
-    
-	public static void populateTransitionApprovals(String currentStateName, OMElement node,
-			Map<String, List<ApprovalBean>> transitionApproval) {
-		// Adding the transition approval
-		if (!transitionApproval.containsKey(currentStateName) 
-				&& (node.getAttributeValue(new QName(LifecycleConstants.NAME)).equals("transitionApproval"))) {
-			List<ApprovalBean> approvalBeanList = new ArrayList<ApprovalBean>();
-			Iterator approvalIterator = node.getChildElements();
-			while (approvalIterator.hasNext()) {
-				OMElement approveChild = (OMElement) approvalIterator.next();
-				approvalBeanList.add(createApprovalBean(approveChild));
-			}
-			transitionApproval.put(currentStateName, approvalBeanList);
-		}
-	}
-	
-	public static void addTransitionApprovalItems(Resource resource, List<ApprovalBean> approvalBeans, String state){
+
+    public static void populateTransitionApprovals(String currentStateName, OMElement node,
+                                                   Map<String, List<ApprovalBean>> transitionApproval) {
+        // Adding the transition approval
+        if (!transitionApproval.containsKey(currentStateName)
+                && (node.getAttributeValue(new QName(LifecycleConstants.NAME)).equals("transitionApproval"))) {
+            List<ApprovalBean> approvalBeanList = new ArrayList<ApprovalBean>();
+            Iterator approvalIterator = node.getChildElements();
+            while (approvalIterator.hasNext()) {
+                OMElement approveChild = (OMElement) approvalIterator.next();
+                approvalBeanList.add(createApprovalBean(approveChild));
+            }
+            transitionApproval.put(currentStateName, approvalBeanList);
+        }
+    }
+
+    public static void addTransitionApprovalItems(Resource resource, List<ApprovalBean> approvalBeans, String state) {
         if (approvalBeans != null) {
-        	int order = 0;
+            int order = 0;
             for (ApprovalBean approvalBean : approvalBeans) {
-                
-            	List<String> allowedRoles = new ArrayList<String>();
-                allowedRoles.addAll(approvalBean.getRoles());               
+
+                List<String> allowedRoles = new ArrayList<String>();
+                allowedRoles.addAll(approvalBean.getRoles());
 
                 List<String> items = new ArrayList<String>();
                 items.add("status:" + state);
@@ -477,20 +479,20 @@ public class Utils {
             }
         }
     }
-	
-	public static boolean isTransitionApprovalAllowed(String[] roles, List<ApprovalBean> approvalBeans, String eventName, int currentVotes) {
+
+    public static boolean isTransitionApprovalAllowed(String[] roles, List<ApprovalBean> approvalBeans, String eventName, int currentVotes) {
         boolean approvalAllowed = false;
         if (approvalBeans != null) {
             for (ApprovalBean approvalBean : approvalBeans) {
                 if (approvalBean.getForEvent().equals(eventName) && currentVotes > approvalBean.getVotes()) {
-                	approvalAllowed = true;
+                    approvalAllowed = true;
                 }
             }
         }
         return approvalAllowed;
     }
-	
-	public static void clearTransitionApprovals(Resource resource) {
+
+    public static void clearTransitionApprovals(Resource resource) {
         Properties properties = (Properties) resource.getProperties().clone();
         for (Object o : properties.keySet()) {
             String key = (String) o;
@@ -502,26 +504,12 @@ public class Utils {
         }
     }
 
-    public static void getTimeValidity(TimeWindowBean timeWindowBean){
-
-
-       /* String value = resource.getProperty(LifecycleConstants.TIME_VALIDITY);
-        System.out.println("TimeValidity:"+value);
-
-        if(value.equals("false")){
-            isTimeValid = false;
-        }*/
-
-        System.out.println("isTimeValid:"+timeWindowBean.getIsTimeValid());
-        if(timeWindowBean.getIsTimeValid() == false){
-            isTimeValid = false;
-        }
-        else
-            isTimeValid = true;
-
-        }
-
+    //get the isTimeValid attribute from TimeWindowBean which will then used to handle UI elements
+    public static void getTimeValidity(TimeWindowBean timeWindowBean) {
+        isTimeValid = timeWindowBean.getIsTimeValid();
     }
+
+}
 
 
 

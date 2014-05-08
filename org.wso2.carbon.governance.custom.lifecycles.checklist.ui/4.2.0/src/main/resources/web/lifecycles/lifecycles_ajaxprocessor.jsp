@@ -692,30 +692,19 @@
             if (!approveListItems.isEmpty()) {
             	for (ApproveItem approvelItem : approveListItems) {
             		if(approvelItem.getName().equals(action) && (approvelItem.getRequiredVote()-approvelItem.getCurrentVote() > 0)){
-            			actionDisable = false;
+            			actionDisable = true;
             		}
             	}
 
             }
-            boolean buttonDisable = false;
 
-               if(Utils.isTimeValid == false){
-                   buttonDisable = true;
-                }
-                else
-                    buttonDisable = false;
-
-                /*String value = resource.getProperty(LifecycleConstants.TIME_VALIDITY);
-                System.out.println(value);
-
-                if(value.equals("false")){
-                    actionDisable = true;
-                }*/
-
-
+            //boolean value to make buttons enabled or disabled.
+            boolean buttonDisable;
+            //value will be taken from Utils and assigned.
+            buttonDisable = !(Utils.isTimeValid);
             %>
-            
-            <input class="button registryWriteOperation" type="button" id="<%=action%>" <%if(actionDisable){ %> disabled="disabled" <%} %> <%if(buttonDisable){ %> disabled="disabled" <%} %>
+                                                                                                                                          <!-- Ui element is handled according to the boolean value buttonDisable -->
+            <input class="button registryWriteOperation" type="button" id="<%=action%>" <%if(actionDisable){ %> disabled="disabled" <%} %><%if(buttonDisable){ %> disabled="disabled" <%} %>
                    value="<fmt:message key="action.lifecycle"><fmt:param value="<%=action%>"/></fmt:message>"
                    onclick="loadCustomUI('<%=bean.getPathWithVersion()%>', '<%=lifecycle%>', '<%=action%>','<%=bean.getMediaType()%>'
                            ,'<%=customUILink%>'<% if (!lifecycleScriptCommand.equals("")) {%>,
