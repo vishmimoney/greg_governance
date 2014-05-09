@@ -35,9 +35,18 @@ Then the functionality is achieved from 3 java classes and a jsp file.
 * Download org.wso2.carbon.governance.registry.extensions and org.wso2.carbon.governance.custom.lifecycles.checklist.ui packages from the uploaded list.
 * each of those have a jar file inside its /target/ location.
 * Replace the jars inside <GREG_HOME>/repository/components/plugins/ from those.
-  NOTE: you have to rename the newly copied one using a underscore for the hyphen it has.
+
+ NOTE: you have to rename the newly copied one using a underscore for the hyphen it has.
+
+OR
+
+* You can find these two jar files inside the folder jar_files that I have uploaded.
+* You can simply copy replace the existing ones in <GREG_HOME>/repository/components/plugins/ with these two jars.
+
+
 * I have uploaded a folder called other_resources and you can find the relavent configuration.xml file and scxml.xsd file there.
 * Replace <GREG_HOME>/repository/resources/scxml.xsd with the given file.
+
   NOTE: If not xml validation will be failed when you edit the lifecycle configuration.
 * Run the server.
 * Go to Extensions --> Configure --> Lifecycles --> Add New Lifecycle.
