@@ -30,7 +30,7 @@ Then the functionality is achieved from 3 java classes and a jsp file.
 * `getTimeValidity` mehtod in `Utils.java` and the `TimeWIndowBean` is sent to that.There the boolean value `isTimeValid` is maintained and it is sent to `lifecycles_ajaxprocessor.jsp`.
 * According to the boolean value the UI elements will be enabled and disabled from the jsp.
 
-## Setting up the feature:
+## Setting up:
 
 * Download org.wso2.carbon.governance.registry.extensions and org.wso2.carbon.governance.custom.lifecycles.checklist.ui packages from the uploaded list.
 * each of those have a jar file inside its /target/ location.
@@ -48,6 +48,9 @@ OR
 * Replace <GREG_HOME>/repository/resources/scxml.xsd with the given file.
 
   NOTE: If not xml validation will be failed when you edit the lifecycle configuration.
+
+## Running:
+
 * Run the server.
 * Go to Extensions --> Configure --> Lifecycles --> Add New Lifecycle.
 ![configuration](https://docs.google.com/drawings/d/1b740PQGSlum2G-1OyGdIwnsZN4Yo5r4Jp2-y6hHcH0g/pub?w=960&h=720)
