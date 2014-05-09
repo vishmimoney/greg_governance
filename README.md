@@ -45,7 +45,7 @@ Then the functionality is achieved from 3 java classes and a jsp file.
 * Replace the text from the content of given Configurations.xml and click Save.
 * Note the `TimeValidation`, `TimeValidity` elements and `startDate`, `endDate` attributes. You can change them to desired values adhering to the format given.
 
-### Testing:
+## Testing:
 * You can simply create a Resource or for an existing resource, set this lifecycle configuration as the Life-cycle for it.
 * Change the time attributes as desired and check for the scenarios below.
 
