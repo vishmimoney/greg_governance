@@ -25,7 +25,7 @@ org.wso2.carbon.governance.registry.extensions.aspects.utils
 org.wso2.carbon.governance.custom.lifecycles.checklist.ui
        `lifecycles_ajaxprocessor.jsp`
 
-![](https://docs.google.com/a/wso2.com/drawings/d/1SAPvyjbAQGU3Vtq4xbxo2riBjOl70jhCdxhi5mrEpSE/pub?w=960&h=720)
+https://docs.google.com/drawings/d/1Rx54bYBa1Qrn5a_3ZkCJAeNXScFNXwbcNgYKXeJZGtE/pub?w=960&h=720
 
 * I get xml data from getTimeData method implemented in DefaultLifeCycle.java.
 * that data is put in to a Hash map timeValidation which consists of a state and its time attributes.
