@@ -17,8 +17,7 @@ Then the functionality is achieved from 3 java classes and a jsp file.
        
 `TimeWindowBean.java` - org.wso2.carbon.governance.registry.extensions.beans.TimeWindowBean.java
        
-`Utils.java` -
-org.wso2.carbon.governance.registry.extensions.aspects.utils.Utils.java
+`Utils.java` - org.wso2.carbon.governance.registry.extensions.aspects.utils.Utils.java
 
 `lifecycles_ajaxprocessor.jsp` - org.wso2.carbon.governance.custom.lifecycles.checklist.ui.lifecycles_ajaxprocessor.jsp
       
@@ -37,17 +36,27 @@ org.wso2.carbon.governance.registry.extensions.aspects.utils.Utils.java
 * each of those have a jar file inside its /target/ location.
 * Replace the jars inside <GREG_HOME>/repository/components/plugins/ from those.
   NOTE: you have to rename the newly copied one using a underscore for the hyphen it has.
-* 
+* I have uploaded a folder called other_resources and you can find the relavent configuration.xml file and scxml.xsd file there.
+* Replace <GREG_HOME>/repository/resources/scxml.xsd with the given file.
+  NOTE: If not xml validation will be failed when you edit the lifecycle configuration.
 * Run the server.
+* Go to Extensions --> Configure --> Lifecycles --> Add New Lifecycle.
+![configuration](https://docs.google.com/drawings/d/1b740PQGSlum2G-1OyGdIwnsZN4Yo5r4Jp2-y6hHcH0g/pub?w=960&h=720)
+* Replace the text from the content of given Configurations.xml and click Save.
+* Note the `TimeValidation`, `TimeValidity` elements and `startDate`, `endDate` attributes. You can change them to desired values adhering to the format given.
+
+### Testing:
+* You can simply create a Resource or for an existing resource, set this lifecycle configuration as the Life-cycle for it.
+* Change the time attributes as desired and check for the scenarios below.
 
 ## Functionality:
 
 Scenario 1:
-If you enter a date which is far ahead of currnet date, all things will act in normal way.UI element functionalities are there.
+If you enter a date which is far ahead of current date, all things will act in normal way.UI element functionality are there.
 ![scenario1](https://docs.google.com/drawings/d/1Ivdd9ClanU6mxhFRG1o6vyFwh579PkhkzoWYdtTYBPM/pub?w=960&h=720)
 
 Scenario 2:
-If you enter a day which is within the notofying period defined it will send a notification to the user.UI element functionalities are there.
+If you enter a day which is within the notofying period defined it will send a notification to the user. UI element functionality are there.
 ![scenario2](https://docs.google.com/drawings/d/1q0W1LPKRJiH7_thDfQOElNGgZ5Q_0HMTD3Pa1YixebA/pub?w=960&h=720)
 
 Scenario 3:
