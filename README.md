@@ -32,7 +32,7 @@ Then the functionality is achieved from 3 java classes and a jsp file.
 
 ## Setting up:
 
-* You can find packages named as org.wso2.carbon.governance.registry.extensions and org.wso2.carbon.governance.custom.lifecycles.checklist.ui in the uploaded list.
+* You can find packages named as org.wso2.carbon.governance.registry.extensions and org.wso2.carbon.governance.custom.lifecycles.checklist.ui in the file list.
 * each of those have a jar file inside its /target/ location.
 * Replace the jars inside <GREG_HOME>/repository/components/plugins/ from those.
 
