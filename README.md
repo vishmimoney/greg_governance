@@ -9,7 +9,7 @@ This feature is developed to enable the exemption of users, from requiring certa
 
 G-reg contains artifacts which can be resources or collections, for which we can assign a specified life-cycle. Life-cycle configuration is a xml file called configuration.xml and we can define the lifecycle elements and attributes there.
 
-Exemption Policy is achieved by introducing new data element timeValidation to lifecycle configuration, and a child element timeValidity and the attributes of it. They are startDate and endDate. You can check it in the configurations.xml file which has uploded here.
+Exemption Policy is achieved by introducing a new data element timeValidation to lifecycle configuration, and a child element timeValidity and the attributes of it. They are startDate and endDate. You can check it in the configurations.xml file which has uploded here.
 
 Then the functionality is achieved from 3 java classes and a jsp file.
 
