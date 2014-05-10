@@ -68,9 +68,9 @@ If you enter a date which is far ahead of current date, all things will act in n
 ![scenario1](https://docs.google.com/drawings/d/1Ivdd9ClanU6mxhFRG1o6vyFwh579PkhkzoWYdtTYBPM/pub?w=960&h=720)
 
 Scenario 2:
-If you enter a day which is within the notofying period defined it will send a notification to the user. UI element functionality are there.
+If you enter a date which is within the notofying period defined it will send a notification to the user. UI element functionality are there.
 ![scenario2](https://docs.google.com/drawings/d/1q0W1LPKRJiH7_thDfQOElNGgZ5Q_0HMTD3Pa1YixebA/pub?w=960&h=720)
 
 Scenario 3:
-If you enter a day which is passed it will not only send a notification but also disable the UI elements so that you cannot take an action. You are exempted.
+If you enter a date which is passed it will not only send a notification but also disable the UI elements so that you cannot take an action. You are exempted.
 ![scenario3](https://docs.google.com/drawings/d/1PEIaScawRtEcDU209AR2ZsbMBBltrKr7iMjo53BEuaA/pub?w=960&h=720)
